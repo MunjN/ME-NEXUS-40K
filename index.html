@@ -123,7 +123,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ME-NEXUS 40K</title>
+  <title>ME-NEXUS 70K</title>
   <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.19.1/dist/powerbi.min.js"></script>
   <script src="/amazon-cognito-identity.min.js"></script>
   <style>
@@ -303,7 +303,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const payload = idToken.decodePayload();
         const groups = payload['cognito:groups'] || [];
 
-        if (groups.includes('ME-DMZ_Internal_Team')) {
+        if (groups.includes('ME-DMZ_Internal_Team') || groups.includes('HP_TEAM')) {
           document.cookie = `idToken=${jwt}; path=/; max-age=3600; Secure; SameSite=Strict`;
           authContainer.style.display = 'none';
           document.getElementById('reportContainer').style.display = 'block';
